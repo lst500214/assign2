@@ -57,10 +57,6 @@ void setup () {
   percentage = 200/100;
   hpWeightX = percentage * 20;
   hpWeightY = 30;
-
-  //set treasure position in random X asix and Y asix
-  treasureX = floor(random(200,550));
-  treasureY = floor(random(40,439));
   
   //set initial gameState in start;
   gameState = GAME_START;
@@ -81,6 +77,9 @@ void draw() {
       jetX = 580; 
       jetY = 240;
       
+      //reset treasure position in random X asix and Y asix
+      treasureX = floor(random(200,550));
+      treasureY = floor(random(40,439));
       //mouse action and hover on start background
       
       if (mouseY > 370 && mouseY < 420){
