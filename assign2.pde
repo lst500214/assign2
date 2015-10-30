@@ -143,14 +143,14 @@ void draw() {
       
         if(enemyY > jetY){
           enemyY -= 2;
-          if(jetY<width/2){
+          if(jetX<width/2){
             enemyY -=1;
           }
         }
         
         if(enemyY < jetY){
           enemyY += 2;
-          if(jetY>width/2){
+          if(jetX>width/2){
             enemyY +=1;
           }
         }
@@ -164,7 +164,7 @@ void draw() {
         hpWeightX -= (percentage*20);
         enemyX = -61;
         enemyY = floor(random(40,450));
-        if(jetY<width/2){
+        if(jetX<width/2){
         enemyY = floor(random(jetY-150, jetY+150));
         }
      
