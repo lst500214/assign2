@@ -140,10 +140,19 @@ void draw() {
       //enemy
       //enemy tracking 
       
+      
         if(enemyY > jetY){
           enemyY -= 2;
-        }else if(enemyY < jetY){
+          if(jetY<width/2){
+            enemyY -=1;
+          }
+        }
+        
+        if(enemyY < jetY){
           enemyY += 2;
+          if(jetY>width/2){
+            enemyY +=1;
+          }
         }
             
       //distance between jet and enemy
@@ -155,6 +164,9 @@ void draw() {
         hpWeightX -= (percentage*20);
         enemyX = -61;
         enemyY = floor(random(40,450));
+        if(jetY<width/2){
+        enemyY = floor(random(jetY-150, jetY+150));
+        }
      
       }else{
         image(enemy, enemyX, enemyY);
@@ -218,7 +230,7 @@ void draw() {
         image(endHover, x, y);
         if (mousePressed){
         //click to start
-          gameState = GAME_START; 
+          gameState = GAME_RUN; 
         }
       }
      break;
